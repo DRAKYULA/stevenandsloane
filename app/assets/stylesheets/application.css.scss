@@ -1,95 +1,149 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
  *= require font-awesome
+ *= require scrolling-nav
+ *= require_self
  */
 
-* {
-	box-sizing: border-box;
-}
+$contentFont: 1.25em/1.8em Georgia, serif;
 
 @font-face {
-   font-family: 'myFont';
+   font-family: 'Meath';
    src: url('meath_flf.ttf') format('truetype');
    font-weight: normal;
    font-style: normal;
 }
 
-html {
-	background: url("jpeg.jpg") center top scroll;
-}
-
 body {
-	background-color: transparent;
-	font-family: myFont;
+  padding: 51px 0 0;
+  font-family: Meath;
+  background: url("background.jpg") center top scroll;
 }
 
-
-.main-container {
-	background: #DDD6C7
+section {
+  margin: 0 0 20px;
 }
 
-.carousel-inner > .item > img {
-  width: 80%;
-  margin: auto;
-}
-
-.carousel-inner > .item > a > img {
-  width: 70%;
-  margin: 90%;
-}
-
-#to-wedding-details {
-	margin-top: 20px;
+h1, h2 {
+  margin: 0 0 20px;
+  text-align: center;
 }
 
 h1 {
-	margin-bottom: 20px;
-	font-size: 50px;
+  font-size: 3em;
 }
 
 p {
-	padding: 0px 10%;
-	font-size: 28px;
-	text-align: left;
-	text-indent: 1em;
+  font: $contentFont;
+  margin: 0 0 20px;
+  text-indent: 1em;
+}
+
+img, .clipped-image {
+  border: solid 4px #fff;
+  margin: 0 0 20px;
+}
+
+.clipped-image {
+  overflow: hidden;
+  max-height: 300px;
+
+  img {
+    border: 0;
+  }
+}
+
+.btn {
+  font: $contentFont;
+}
+
+.navbar {
+  background: #A4C2C4;
+
+  .navbar-brand {
+    font-size: 2.5em;
+  }
+
+  &.navbar-fixed-top li a {
+    font-size: 1.5em;
+  }
+}
+
+.main-container {
+  padding-top: 20px;
+  background: #DDD6C7
+}
+
+#intro {
+  img {
+    margin: 0 0 20px;
+  }
+}
+
+.btn.page-scroll {
+  display: none;
+  margin: 0 auto 20px;
+  padding: 0;
+}
+
+.clip {
+  height: 450px;
+  overflow: hidden;
 }
 
 .sloane-and-steven-images {
-	margin-top: 20px;
-	padding: 20px 0px;
+  margin-top: 20px;
+  padding: 20px 0px;
 }
 
 img {
     max-width: 100%;
     height: auto;
-    width: auto\9; /* ie8 */
 }
 
 iframe, .clip {
-	width: 100%;
-}
-
-.clip {
-	height: 450px;
-	overflow: hidden;
-}
-
-.btn {
-	white-space: normal
+  width: 100%;
 }
 
 .sloane-and-steven-images img {
-	margin: 10px 0;
+  margin: 10px 0;
+}
+
+
+/* Desktop resolutions */
+@media(min-width:767px) {
+  body {
+    font-size: 1.8em;
+    padding-top: 71px;
+  }
+
+  .navbar {
+    padding: 10px 0;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+
+    .navbar-brand {
+      font-size: 2em;
+    }
+
+    &.navbar-fixed-top li a {
+      font-size: 1em;
+    }
+  }
+
+  section {
+    margin-bottom: 35px;
+  }
+
+  #wedding img {
+    float: left;
+    max-width: 45%;
+    margin: 0 20px 20px 0;
+  }
+
+  #reception .clipped-image {
+    float: right;
+    max-width: 45%;
+    margin: 0 0 20px 20px;
+  }
 }
