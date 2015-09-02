@@ -8,7 +8,7 @@ $contentFont: 1.25em/1.8em Georgia, serif;
 
 @font-face {
    font-family: 'Meath';
-   src: url('meath_flf.ttf') format('truetype');
+   src: asset-url('meath_flf.ttf') format('truetype');
    font-weight: normal;
    font-style: normal;
 }
@@ -16,7 +16,7 @@ $contentFont: 1.25em/1.8em Georgia, serif;
 body {
   padding: 51px 0 0;
   font-family: Meath;
-  background: url("background.jpg") center top scroll;
+  background: asset-url('background.jpg') center top scroll;
 }
 
 section {
